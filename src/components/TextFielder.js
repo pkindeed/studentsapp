@@ -32,7 +32,7 @@ class TextFielder extends React.Component {
     async handleSubmit(event) {
         event.preventDefault();
         this.setState({ dataIsSending: true });
-        await axios.post('http://localhost:9096/rest/users/insert', { "alga": this.state.alga, "vardas": this.state.vardas })
+        await axios.post('https://backextestex.herokuapp.com/rest/users/insert', { "alga": this.state.alga, "vardas": this.state.vardas })
             .then(data => this.setState({ dataIsSending: false }));
     } catch(error) {
         console.log(error);
