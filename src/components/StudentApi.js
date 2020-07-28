@@ -24,7 +24,7 @@ class StudentApi extends React.Component {
 
   async componentDidMount() {
     try {
-      await fetch('http://localhost:9096/rest/users/all')
+      await fetch('https://backextestex.herokuapp.com/rest/users/all')
         .then(response => response.json())
         .then(data => this.setState({ data }));
     } catch (error) {
@@ -37,12 +37,12 @@ class StudentApi extends React.Component {
     event.preventDefault();
     this.setState({ dataIsSending: true });
     try {
-      await axios.delete('http://localhost:9096/rest/users/delete')
+      await axios.delete('https://backextestex.herokuapp.com/rest/users/delete')
     } catch (error) {
       console.log(error);
     };
     try {
-      await fetch('http://localhost:9096/rest/users/all')
+      await fetch('https://backextestex.herokuapp.com/rest/users/all')
         .then(response => response.json())
         .then(data => this.setState({ data }))
         .then(this.setState({ dataIsSending: false }))
